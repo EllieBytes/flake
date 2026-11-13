@@ -40,7 +40,7 @@
   # Flatpak, since you may not want to be super heavy on your NixOS config editing yet*
   services.flatpak.enable = true;
 
-  users.users.carter = {
+  users.users.chookalio = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "networkmanager" ];
     initialPassword = "1"; # CHANGE TF OUT OF THIS.
