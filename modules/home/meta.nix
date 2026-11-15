@@ -3,5 +3,7 @@
 {
   namespace = "homeModules";
 
-  extraModules = [];
+  extraModules = [
+    inputs.zen-browser.homeModules.default
+  ];
 }

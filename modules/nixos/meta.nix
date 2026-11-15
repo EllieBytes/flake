@@ -5,6 +5,6 @@
 
   extraModules = [
     inputs.lanzaboote.nixosModules.default
-    inputs.nix-mineral.nixosModules.default
+    inputs.nix-mineral.nixosModules.nix-mineral
   ];
 }

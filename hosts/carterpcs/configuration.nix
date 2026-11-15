@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Base profiles enabled here.
@@ -43,9 +48,9 @@
   # Uncomment to disable flatpak.
   # services.flatpak.enable = false;
 
+  # Your user is largely managed by my RBAC framework.
   users.users.chookalio = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "networkmanager" ];
     initialPassword = "1"; # CHANGE TF OUT OF THIS.
 
     # Throw declared packages here.

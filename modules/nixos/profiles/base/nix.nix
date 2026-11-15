@@ -1,14 +1,21 @@
-{ config, lib, inputs, ... }:
+{ config, lib, ... }:
 
 let
-inherit (lib) mkDefault;
+  inherit (lib) mkDefault;
 in
 {
   config = lib.mkIf config.profiles.base.enable {
     nix = {
       settings = {
-        extra-experimental-features = [ "nix-command" "flakes" "pipe-operators" ];
-        trusted-users = [ "root" "@wheel" ];
+        extra-experimental-features = [
+          "nix-command"
+          "flakes"
+          "pipe-operators"
+        ];
+        trusted-users = [
+          "root"
+          "@wheel"
+        ];
         auto-optimize-store = true;
       };
 

@@ -7,12 +7,18 @@ let
 
   inferredESP =
     let
-      vfatMounts = lib.filterAttrs (mp: fs: fs.fsType == "vfat") config.fileSystems;
+      vfatMounts = filterAttrs (mp: fs: fs.fsType == "vfat") config.fileSystems;
     in
-      if hasAttr "/efi" vfatMounts then "/efi"
-      else if hasAttr "/boot/efi" vfatMounts then "/boot/efi"
-      else if hasAttr "/boot" vfatMounts then "/boot"
-      else lib.warn "No guaranteed ESP found. Using `${head (attrNames vfatMounts)}`" (head (attrNames vfatMounts));
+    if hasAttr "/efi" vfatMounts then
+      "/efi"
+    else if hasAttr "/boot/efi" vfatMounts then
+      "/boot/efi"
+    else if hasAttr "/boot" vfatMounts then
+      "/boot"
+    else
+      lib.warn "No guaranteed ESP found. Using `${head (attrNames vfatMounts)}`" (
+        head (attrNames vfatMounts)
+      );
 in
 {
   imports = [

@@ -1,9 +1,14 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   config = lib.mkIf config.profiles.laptop.enable {
     programs.light.enable = lib.mkDefault true;
-    programs.actkbd.enable = lib.mkDefault true;
+    services.actkbd.enable = lib.mkDefault true;
     services.fstrim.enable = lib.mkDefault true;
 
     services.libinput = {

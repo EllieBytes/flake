@@ -1,7 +1,12 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
-  inherit (lib) mkIf mkDefault;
+  inherit (lib) mkIf mkDefault mkOverride;
   cfg = config.profiles.base;
 in
 {
@@ -10,7 +15,7 @@ in
       eza
     ];
 
-    users.defaultUserShell = mkDefault pkgs.fish;
+    users.defaultUserShell = mkOverride 900 pkgs.fish;
 
     programs.fish = {
       enable = mkDefault true;

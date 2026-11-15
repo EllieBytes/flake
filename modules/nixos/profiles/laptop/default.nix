@@ -7,7 +7,7 @@
     ./services.nix
   ];
 
-  options.profiles.laptop.enable = {
+  options.profiles.laptop = {
     enable = lib.mkEnableOption "Laptop profile";
   };
 

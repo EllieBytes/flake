@@ -1,9 +1,10 @@
-{ config, lib, ... }:
+{ lib, ... }:
 
 {
   imports = [
     ./shell.nix
     ./utils.nix
+    ./users.nix
     ./nix.nix
     ./security.nix
     ./boot

@@ -7,7 +7,7 @@
 
     nix-mineral = {
       enable = lib.mkDefault true;
-      presets = lib.mkDefault [
+      preset = lib.mkDefault [
         "compatibility"
         "performance"
       ];

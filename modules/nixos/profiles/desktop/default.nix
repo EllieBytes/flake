@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ lib, ... }:
 
 let
   inherit (lib) mkOption types mkEnableOption;
@@ -8,6 +8,7 @@ in
   imports = [
     ./common
     ./swayfx
+    ./users.nix
 
     ./gaming.nix
   ];
@@ -20,7 +21,9 @@ in
     };
 
     backend = mkOption {
-      type = enum [ "swayfx" /* "xfce" "cosmic" */ ];
+      type = enum [
+        "swayfx" # "xfce" "cosmic"
+      ];
       default = "swayfx";
     };
   };

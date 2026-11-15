@@ -1,4 +1,8 @@
 {
+  imports = [
+    ./users.nix
+  ];
+
   profiles.base.enable = true;
   profiles.base.bootmode = "lanzaboote";
 

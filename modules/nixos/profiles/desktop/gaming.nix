@@ -1,9 +1,17 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  config = lib.mkIf (config.profiles.desktop.enable && config.profiles.desktop.gaming.enable) {
+  config = lib.mkIf ((config.profiles.desktop.enable) && (config.profiles.desktop.gaming.enable)) {
     assertions = [
-      { assertion = config.nixpkgs.config.allowUnfree; message = "You must allow unfree packages for steam to work."; }
+      {
+        assertion = config.nixpkgs.config.allowUnfree;
+        message = "You must allow unfree packages for steam to work.";
+      }
     ];
 
     nixpkgs.config.allowUnfree = lib.mkDefault true;
@@ -13,7 +21,7 @@
       protontricks.enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
-      localGameTransfers.openFirewall = true;
+      localNetworkGameTransfers.openFirewall = true;
     };
   };
 }
