@@ -1,0 +1,30 @@
+# Editor tmps.
+*~
+*.swp
+/.idea/
+/.vscode/
+.sublime-workspace
+
+/.direnv/
+
+# Nix
+/result
+/result-*
+
+# Secrets :3
+*.local
+*.priv
+*.secret
+*.key
+
+*.ecdsa
+*.ecdsa-sk
+*.ed25519
+*.ed25519-sh
+*.mldsa44-ed25519
+*.rsa
+
+/secrets/decrypted/
+
+# Misc
+.DS_Store

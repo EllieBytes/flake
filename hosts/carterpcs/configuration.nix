@@ -35,10 +35,13 @@
     wayland.enable = true;
   };
 
+  # Uncomment to disable SwayFX
+  # programs.sway.enable = false;
+
   services.xserver.enable = true;
 
-  # Flatpak, since you may not want to be super heavy on your NixOS config editing yet*
-  services.flatpak.enable = true;
+  # Uncomment to disable flatpak.
+  # services.flatpak.enable = false;
 
   users.users.chookalio = {
     isNormalUser = true;
@@ -47,7 +50,6 @@
 
     # Throw declared packages here.
     packages = with pkgs; [
-
     ];
   };
 }

@@ -1,7 +1,17 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
-  inherit (lib) mkIf mkOverride mkForce mkDefault;
+  inherit (lib)
+    mkIf
+    mkOverride
+    mkForce
+    mkDefault
+    ;
   cfg = config.profiles.base;
 in
 {

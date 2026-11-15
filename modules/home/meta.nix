@@ -1,0 +1,7 @@
+{ inputs, ... }:
+
+{
+  namespace = "homeModules";
+
+  extraModules = [];
+}

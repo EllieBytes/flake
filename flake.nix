@@ -1,5 +1,6 @@
 {
   inputs = {
+    # Base inputs.
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-small.url = "github:NixOS/nixpkgs/nixos-26.05-small";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -10,6 +11,7 @@
     burrow.url = "github:EllieBytes/burrow";
     burrow.inputs.flake-parts.follows = "flake-parts";
 
+    # NixOS inputs.
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-unstable.url = "github:nix-community/home-manager/master";
@@ -34,11 +36,15 @@
     nix-mineral.url = "github:nix-community/nix-mineral";
     nix-mineral.inputs.nixpkgs.follows = "nixpkgs";
     nix-mineral.inputs.flake-parts.follows = "flake-parts";
+
+    # Flake inputs.
+    devshell.url = "github:numtide/devshell";
+    devshell.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ flake-parts, burrow, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ burrow.flakeModule ];
+      imports = [ burrow.flakeModule inputs.devshell.flakeModule ./parts ];
       systems = [ "x86_64-linux" "aarch64-linux" ];
 
       burrow.root = ./.;

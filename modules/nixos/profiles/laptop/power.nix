@@ -1,7 +1,17 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
-  inherit (lib) mkOption types mkIf;
+  inherit (lib)
+    mkOption
+    types
+    mkIf
+    mkDefault
+    ;
   inherit (types) enum;
 
   cfg = config.profiles.laptop;
