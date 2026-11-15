@@ -7,9 +7,11 @@ in
 {
   imports = [
     ./common
-    ./swayfx
-    ./users.nix
 
+    ./swayfx
+    ./kde
+
+    ./users.nix
     ./gaming.nix
   ];
 
@@ -22,7 +24,8 @@ in
 
     backend = mkOption {
       type = enum [
-        "swayfx" # "xfce" "cosmic"
+        "swayfx"
+        "kde" # "xfce" "cosmic"
       ];
       default = "swayfx";
     };

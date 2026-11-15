@@ -1,6 +1,5 @@
 {
   config,
-  lib,
   pkgs,
   ...
 }:
@@ -31,19 +30,7 @@
   # I do not know if you want that so I'll disable it here.
   nix-mineral.enable = false;
 
-  # KDE setup
-  # SwayFX is also bundled with the `desktop` profile by default.
-  # If it drops you there make sure you have KDE selected in SDDM.
-  services.desktopManager.plasma6.enable = true;
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
-
-  # Uncomment to disable SwayFX
-  # programs.sway.enable = false;
-
-  services.xserver.enable = true;
+  profiles.desktop.backend = "kde";
 
   # Uncomment to disable flatpak.
   # services.flatpak.enable = false;
@@ -54,7 +41,9 @@
     initialPassword = "1"; # CHANGE TF OUT OF THIS.
 
     # Throw declared packages here.
-    packages = with pkgs; [
-    ];
+    packages = with pkgs; [ ];
   };
+
+  # System wide packages here
+  environment.systemPackages = with pkgs; [ ];
 }

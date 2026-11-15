@@ -1,4 +1,10 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   options.profiles.desktop = {
@@ -17,9 +23,10 @@
 
     environment.systemPackages = (
       if config.profiles.desktop.excludeCommonPackages then
-        []
+        [ ]
       else
-        with pkgs; [
+        with pkgs;
+        [
           keepassxc
           kitty
           bazaar
@@ -30,6 +37,7 @@
           onlyoffice-desktopeditors
           gimp
           home-manager
+          kdePackages.dolphin
         ]
     );
   };
