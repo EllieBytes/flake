@@ -1,0 +1,17 @@
+{
+  "height": 24,
+  "spacing": 4,
+
+  "modules-left": ["sway/workspaces", "sway/scratchpad"],
+
+  "modules-center": ["clock"],
+
+  "modules-right": [
+    "wireplumber",
+    "mpris",
+    "power-profiles-daemon",
+    "battery",
+    "tray",
+    "custom/power"
+  ]
+}

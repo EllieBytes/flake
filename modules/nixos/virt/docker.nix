@@ -1,4 +1,8 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 
 # Docker has its merits. (I prefer using native NixOS `systemd-nspawn` containers.)
 let
@@ -15,5 +19,7 @@ in
       autoPrune.enable = true;
       enableOnBoot = mkDefault false;
     };
+
+    user.roles.admin.groups = [ "docker" ];
   };
 }

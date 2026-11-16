@@ -1,9 +1,15 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   inherit (lib) mkIf;
   cfg = config.profiles.base;
-in {
+in
+{
   config = mkIf cfg.enable {
     programs.neovim = {
       enable = lib.mkDefault true;
@@ -26,6 +32,7 @@ in {
       yazi
       rclone
       erdtree
+      lsof
 
       # Terminal.
       tmux
@@ -37,7 +44,16 @@ in {
       lm_sensors
       smartmontools
       parted
+      ethtool
+      dmidecode
+      nvme-cli
+      pv
       git
+      strace
+      bpftrace
+      sysstat
+      iotop-c
+      sysbench
     ];
   };
 }

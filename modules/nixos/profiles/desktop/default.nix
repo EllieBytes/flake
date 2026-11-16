@@ -10,6 +10,7 @@ in
 
     ./swayfx
     ./kde
+    ./xfce
 
     ./users.nix
     ./gaming.nix
@@ -25,9 +26,11 @@ in
     backend = mkOption {
       type = enum [
         "swayfx"
-        "kde" # "xfce" "cosmic"
+        "kde"
+        "xfce"
       ];
-      default = "swayfx";
+
+      default = "xfce";
     };
   };
 }

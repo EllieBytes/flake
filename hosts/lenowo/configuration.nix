@@ -8,4 +8,6 @@
 
   profiles.desktop.enable = true;
   profiles.laptop.enable = true;
+
+  system.stateVersion = "26.05";
 }

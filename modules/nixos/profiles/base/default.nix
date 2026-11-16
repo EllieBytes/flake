@@ -7,6 +7,10 @@
     ./users.nix
     ./nix.nix
     ./security.nix
+    ./i18n.nix
+    ./networking.nix
+    ./hardware.nix
+
     ./boot
   ];
 

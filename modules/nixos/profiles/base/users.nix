@@ -6,6 +6,7 @@
       "adm"
       "systemd-journal"
     ];
+
   };
 
   user.roles.base = {

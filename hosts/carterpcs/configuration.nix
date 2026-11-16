@@ -46,4 +46,6 @@
 
   # System wide packages here
   environment.systemPackages = with pkgs; [ ];
+
+  system.stateVersion = "26.05";
 }

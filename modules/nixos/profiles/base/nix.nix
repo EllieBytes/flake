@@ -7,16 +7,21 @@ in
   config = lib.mkIf config.profiles.base.enable {
     nix = {
       settings = {
+        auto-optimize-store = true;
         extra-experimental-features = [
           "nix-command"
           "flakes"
           "pipe-operators"
         ];
+
         trusted-users = [
           "root"
           "@wheel"
         ];
-        auto-optimize-store = true;
+
+        substituters = [
+          "https://nix-mirror.freetls.fastly.net"
+        ];
       };
 
       gc = {
