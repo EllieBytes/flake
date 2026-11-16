@@ -31,7 +31,7 @@
           kitty
           bazaar
           gparted
-          inputs.zen-browser.pacakges."${config.hostPlatform.system}".twilight-official
+          inputs.zen-browser.packages."${config.nixpkgs.hostPlatform.system}".default
           timeshift
           vlc
           onlyoffice-desktopeditors

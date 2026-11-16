@@ -13,6 +13,7 @@
 
     nix-mineral = {
       enable = lib.mkDefault true;
+      filesystems.enable = false;
       preset = lib.mkDefault [
         "compatibility"
         "performance"

@@ -25,6 +25,7 @@ in
     ./lanzaboote.nix
     ./uefi.nix
     ./legacy.nix
+    ./plymouth.nix
   ];
 
   options.profiles.base = {

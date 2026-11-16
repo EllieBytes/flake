@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   config = lib.mkIf config.profiles.desktop.enable {
@@ -11,7 +16,7 @@
       cantarell-fonts
       fira-code
       hack-font
-      nerd-fonts.iosveka
+      nerd-fonts.iosevka
       nerd-fonts.fira-code
       font-awesome
       vista-fonts

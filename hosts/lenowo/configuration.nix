@@ -1,7 +1,11 @@
 {
   imports = [
     ./users.nix
+    ./disk.nix
+    ./hardware.nix
   ];
+
+  nixpkgs.config.allowUnfree = true;
 
   profiles.base.enable = true;
   profiles.base.bootmode = "lanzaboote";

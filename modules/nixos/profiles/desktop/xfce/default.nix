@@ -27,6 +27,7 @@
       xfce4-weather-plugin
       xfce4-screenshooter
       xfce4-docklike-plugin
+      xfce4-session
     ];
   };
 }

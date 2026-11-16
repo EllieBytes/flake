@@ -7,7 +7,7 @@ in
   config = lib.mkIf config.profiles.base.enable {
     nix = {
       settings = {
-        auto-optimize-store = true;
+        auto-optimise-store = true;
         extra-experimental-features = [
           "nix-command"
           "flakes"

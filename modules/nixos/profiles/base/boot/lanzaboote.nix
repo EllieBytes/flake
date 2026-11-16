@@ -17,7 +17,7 @@ let
 in
 {
   config = mkIf (cfg.enable && (cfg.bootmode == "lanzaboote")) {
-    environment.systemPackages = [ pkgs.sbtcl ];
+    environment.systemPackages = [ pkgs.sbctl ];
 
     boot.lanzaboote = {
       enable = mkOverride 900 true;

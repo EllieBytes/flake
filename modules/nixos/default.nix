@@ -3,5 +3,6 @@
     ./profiles
     ./utility
     ./virt
+    ./comapt
   ];
 }

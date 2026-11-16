@@ -31,7 +31,6 @@ in
 
   config = mkIf cfg.enable {
     powerManagement.enable = mkDefault (cfg.powerManagementStrategy != "none");
-    powerManagement.powertop.enable = mkDefault (cfg.powerManagementStrategy != "none");
     services.thermald.enable = mkDefault true;
 
     services.power-profiles-daemon.enable = cfg.powerManagementStrategy == "power-profiles-daemon";
