@@ -5,13 +5,17 @@
 }:
 
 {
+  imports = [
+    ./disk.nix
+  ];
+
   # Base profiles enabled here.
   profiles.base.enable = true;
   profiles.base.bootmode = "other";
 
   boot.loader = {
     grub.enable = true;
-    # Bothe of these *should* have it coexist clean with your Gentoo.
+    # Both of these *should* have it coexist clean with your Gentoo.
     grub.device = "nodev";
     grub.efiInstallAsRemovable = true;
     grub.useOSProber = true;

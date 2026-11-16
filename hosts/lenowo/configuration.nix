@@ -15,5 +15,11 @@
 
   profiles.laptop.enable = true;
 
+  elliebytes = {
+    compat.ios.enable = true;
+    net.i2p.enable = true;
+    net.i2p.mode = "client";
+  };
+
   system.stateVersion = "26.05";
 }

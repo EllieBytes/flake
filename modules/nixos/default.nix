@@ -3,6 +3,7 @@
     ./profiles
     ./utility
     ./virt
-    ./comapt
+    ./compat
+    ./networking
   ];
 }
