@@ -89,7 +89,10 @@ in
           let
             userRoles = attrValues (
               filterAttrs (
-                _: role: elem name role.assignees || (config.isNormalUser && elem role.name cfg.commonRoles)
+                _: role:
+                elem name role.assignees
+                || (config.isNormalUser && elem role.name cfg.commonRoles)
+                || elem role.name config.extraRoles
               ) cfg.roles
             );
 
@@ -97,17 +100,27 @@ in
             granted = unique (concatMap (role: role.groups) userRoles) ++ config.groups;
           in
           {
-            options.groups = mkOption {
-              type = listOf types.str;
-              default = [ ];
-              description = ''
-                Groups to grant this user before RBAC.
-              '';
+            options = {
+              groups = mkOption {
+                type = listOf types.str;
+                default = [ ];
+                description = ''
+                  Groups to grant this user before RBAC.
+                '';
+              };
+
+              extraRoles = mkOption {
+                type = listOf types.str;
+                default = [ ];
+                description = ''
+                  Extra roles to grant this user.
+                '';
+              };
             };
 
             config = {
               packages = mkBefore (concatMap (r: r.packages) userRoles);
-              extraGroups = mkOverride 90 (
+              extraGroups = mkBefore (
                 concatMap (r: (lib.subtractLists revoked granted) ++ [ "role-${r.name}" ]) userRoles
               );
             };
