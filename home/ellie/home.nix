@@ -20,6 +20,7 @@
     obsidian
     libreoffice
     onlyoffice-desktopeditors
+    archipelago
 
     yaziPlugins.gvfs
   ];
