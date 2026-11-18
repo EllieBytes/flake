@@ -24,6 +24,10 @@
 *.mldsa44-ed25519
 *.rsa
 
+*.sha
+*.sha256
+*.sha512
+
 /secrets/decrypted/
 
 # Misc

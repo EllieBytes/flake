@@ -27,7 +27,7 @@
 
     programs.git = {
       enable = true;
-      extraConfig.credential.helper = "gh";
+      settings.credential.helper = "gh";
     };
 
     programs.lazygit = {

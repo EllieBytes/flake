@@ -44,6 +44,52 @@
         "type": "github"
       }
     },
+    "cosmic-applets-collection": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793391875,
+        "narHash": "sha256-FDQROXaPRrehiXAdE1EEjVbaC/cDYW6/d6Yak3WzWZc=",
+        "owner": "wingej0",
+        "repo": "ext-cosmic-applets-flake",
+        "rev": "1ef9307119f8904b21151e5588749a43d7dd3ae5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "wingej0",
+        "repo": "ext-cosmic-applets-flake",
+        "type": "github"
+      }
+    },
+    "cosmic-manager": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791070782,
+        "narHash": "sha256-1dHqiMHuMHvuru0f9ybyW+3XJHb7P8cz4k4GPa1YYyY=",
+        "owner": "HeitorAugustoLN",
+        "repo": "cosmic-manager",
+        "rev": "f7e32c4b314f8c3a1a23cfdac65132c0ab87d80c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HeitorAugustoLN",
+        "repo": "cosmic-manager",
+        "type": "github"
+      }
+    },
     "crane": {
       "locked": {
         "lastModified": 1789760033,
@@ -490,6 +536,8 @@
       "inputs": {
         "agenix": "agenix",
         "burrow": "burrow",
+        "cosmic-applets-collection": "cosmic-applets-collection",
+        "cosmic-manager": "cosmic-manager",
         "devshell": "devshell_2",
         "disko": "disko",
         "flake-parts": "flake-parts",
@@ -501,6 +549,7 @@
         "nixpkgs-small": "nixpkgs-small",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "shb": "shb",
+        "sops-nix": "sops-nix",
         "zen-browser": "zen-browser"
       }
     },
@@ -546,6 +595,26 @@
       "original": {
         "owner": "ibizaman",
         "repo": "selfhostblocks",
+        "type": "github"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794866654,
+        "narHash": "sha256-Y28AMB8lyKjASdJ0BVsR2AqR1cUsVuo8RVVpzHoECho=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "7c637afdccdf9bcf35c4a2d67b58a77c1fd843a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
         "type": "github"
       }
     },

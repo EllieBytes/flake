@@ -1,0 +1,8 @@
+keys:
+  - &ellie age18q8xwf8792qjjhn4324wmypvxvwk4mcjlfj78s2rklpd3kkwwyzq650kmw
+
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini|sha|key)$
+    key_groups:
+      - age:
+          - *ellie

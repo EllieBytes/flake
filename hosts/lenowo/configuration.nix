@@ -10,8 +10,11 @@
   profiles.base.enable = true;
   profiles.base.bootmode = "lanzaboote";
 
-  profiles.desktop.enable = true;
-  profiles.desktop.backend = "xfce";
+  profiles.desktop = {
+    enable = true;
+    gaming.enable = true;
+    backend = "cosmic";
+  };
 
   profiles.laptop.enable = true;
 

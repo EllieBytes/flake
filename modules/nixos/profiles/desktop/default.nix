@@ -11,6 +11,7 @@ in
     ./swayfx
     ./kde
     ./xfce
+    ./cosmic
 
     ./users.nix
     ./gaming.nix
@@ -28,9 +29,10 @@ in
         "swayfx"
         "kde"
         "xfce"
+        "cosmic"
       ];
 
-      default = "xfce";
+      default = "cosmic";
     };
   };
 }

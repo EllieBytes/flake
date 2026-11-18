@@ -23,6 +23,9 @@
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
 
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.inputs.home-manager.follows = "home-manager";
@@ -37,15 +40,34 @@
     nix-mineral.inputs.nixpkgs.follows = "nixpkgs";
     nix-mineral.inputs.flake-parts.follows = "flake-parts";
 
+    cosmic-applets-collection.url = "github:wingej0/ext-cosmic-applets-flake";
+    cosmic-applets-collection.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Home-Manager inputs.
+
+    cosmic-manager.url = "github:HeitorAugustoLN/cosmic-manager";
+    cosmic-manager.inputs.flake-parts.follows = "flake-parts";
+    cosmic-manager.inputs.home-manager.follows = "home-manager";
+    cosmic-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     # Flake inputs.
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ flake-parts, burrow, ... }:
+  outputs =
+    inputs@{ flake-parts, burrow, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ burrow.flakeModule inputs.devshell.flakeModule ./parts ];
-      systems = [ "x86_64-linux" "aarch64-linux" ];
+      imports = [
+        burrow.flakeModule
+        inputs.devshell.flakeModule
+        ./parts
+      ];
+
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
 
       burrow.root = ./.;
     };

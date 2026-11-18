@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 
@@ -12,6 +11,7 @@ let
     types
     mkIf
     ;
+
   inherit (types) enum;
   cfg = config.elliebytes.net.i2p;
 
@@ -49,7 +49,6 @@ in
           enable = true;
         };
       };
-
     };
   };
 }
